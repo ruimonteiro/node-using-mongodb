@@ -1,4 +1,4 @@
-import { addnewProduct, getProducts } from '../controllers/controllers';
+import { addnewProduct, getProducts, updateProduct, deleteProduct } from '../controllers/controllers';
 
 const routes = (app) => {
     app.route('/products')
@@ -10,6 +10,10 @@ const routes = (app) => {
     app.route('/products/:ProductID')
         // get a specific Product
         .get(getProductWithID)
+
+        .put(updateProduct)
+
+        .delete(deleteProduct);
 
 }
 
